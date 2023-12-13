@@ -5,11 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="txtCommand" TextWrapping="Wrap" Margin="80,45,80,217" TextChanged="txtCommand_TextChanged" AcceptsReturn="True" FontSize="16"/>
-        <Button Content="Execute" Margin="400,223,274,147" Click="Button_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="Create Table" Margin="265,223,405,146" Click="Button_Click_1"/>
-
+        Title="MainWindow" Height="450" Width="800"
+    >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="583">
+        <ListBox Name="lstContacts" Margin="10,10,0,0"
+                Width="400" Height="200"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+        />
+        <TextBox Name="IDtxtb" Margin="0,12,10,0"
+                Width="129" Height="22"
+                HorizontalAlignment="Right" VerticalAlignment="Top" TextChanged="ID_TextChanged"
+        />
+        <Button Name="btnPrev" Content="Previous"
+                Width="100" Margin="10,220,0,0"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnPrev_Click"
+        />
+        <Button Name="btnNext" Content="Next"
+                Width="100" Margin="314,220,0,0"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnNext_Click" RenderTransformOrigin="0.5,0.5"
+        >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-199"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Add Contact" HorizontalAlignment="Left" Margin="498,0,0,0" VerticalAlignment="Center" Click="Button_Click" Width="75"/>
+        <Button Content="Delete Contact" HorizontalAlignment="Left" Margin="327,220,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="415,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Nametxtb" Margin="0,43,10,0"
+            Width="109" Height="22"
+            HorizontalAlignment="Right" VerticalAlignment="Top" TextChanged="Name_TextChanged"
+        />
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="415,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Agetxtb" Margin="0,74,10,0"
+            Width="119" Height="22"
+            HorizontalAlignment="Right" VerticalAlignment="Top" TextChanged="Age_TextChanged"
+        />
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="415,72,0,0" VerticalAlignment="Top"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="418,0,0,0" VerticalAlignment="Center" Click="Button_Click_2" Width="75"/>
+        <Button Content="Select Contact" HorizontalAlignment="Left" Margin="240,220,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click_3"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="415,220,0,0" Click="Button_Click_4"/>
+        <Button Content="Import" HorizontalAlignment="Left" Margin="533,195,0,0" VerticalAlignment="Top" Click="Button_Click_5"/>
+        <Button Content="Export" HorizontalAlignment="Left" Margin="535,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.543,0.08" Click="Button_Click_6"/>
+        <Label Content="CSV File Path:" HorizontalAlignment="Left" Margin="456,135,0,0" VerticalAlignment="Top"/>
+        <TextBox Name ="filepath" HorizontalAlignment="Left" Margin="418,166,0,0" Text="" VerticalAlignment="Top" Width="155" TextChanged="filepath_TextChanged"/>
     </Grid>
 </Window>
